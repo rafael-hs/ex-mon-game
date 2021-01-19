@@ -1,0 +1,2 @@
+defmodule ExMon do
+end
