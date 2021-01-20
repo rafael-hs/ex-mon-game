@@ -1,5 +1,5 @@
 defmodule ExMon.Player do
-  @require_keys [:life, :name, :move_rnd, :move_avg, :move_heal]
+  @require_keys [:life, :moves, :name]
   @max_life 100
 
   @enforce_keys @require_keys
@@ -8,10 +8,12 @@ defmodule ExMon.Player do
   def build(name, move_rnd, move_avg, move_heal) do
     %ExMon.Player{
       life: @max_life,
-      name: name,
-      move_avg: move_avg,
-      move_heal: move_heal,
-      move_rnd: move_rnd
+      moves: %{
+        move_avg: move_avg,
+        move_heal: move_heal,
+        move_rnd: move_rnd
+      },
+      name: name
     }
   end
 end
